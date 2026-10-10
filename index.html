@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b2c">
+<meta name="description" content="Africa Challenge : teste tes connaissances sur l'Afrique, la culture générale et le sport. Gratuit et jouable sur téléphone.">
+<title>Africa Challenge — Ton intelligence, ton défi !</title>
+<style>
+:root{--green:#145a3b;--green2:#1c8055;--gold:#f2ca65;--ink:#15251d;--muted:#64746b;--paper:#f4f7f3;--card:#fff;--line:#dce6de;--red:#a52d2d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#e0f2e7 0,transparent 35%),var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #e5ad26;outline-offset:3px}
+.wrap{max-width:760px;margin:auto;padding:18px 14px 34px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:3px 0 15px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.3px}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--green);color:white;font-size:23px}.tag{font-size:12px;font-weight:700;color:var(--green);background:#e0f0e5;padding:7px 10px;border-radius:99px}
+.hero{background:linear-gradient(125deg,#103d2b,#18714a);color:white;border-radius:24px;padding:24px;position:relative;overflow:hidden;box-shadow:0 12px 28px #164c3020}.hero:after{content:"🌍";position:absolute;right:12px;bottom:-24px;font-size:120px;opacity:.13}.eyebrow{font-size:12px;letter-spacing:1.5px;font-weight:800;color:#f7d878}.hero h1{font-size:clamp(29px,6vw,43px);line-height:1.05;margin:10px 0}.hero p{max-width:470px;color:#e0eee5;line-height:1.5;margin:0}.hero-bottom{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}.chip{border:1px solid #ffffff50;border-radius:99px;padding:7px 10px;font-size:12px}
+.panel{margin-top:15px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 5px 18px #173c2310}.panel h2{font-size:20px;margin:0 0 7px}.sub{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 15px}
+.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cat{border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px;text-align:left;color:var(--ink);transition:.15s}.cat:hover,.cat.selected{border-color:var(--green2);background:#eef8f0}.cat strong{display:block;font-size:14px;margin-top:7px}.cat span{font-size:25px}.cat small{color:var(--muted);display:block;margin-top:3px}
+.btn{border:0;border-radius:13px;background:var(--green);color:white;font-weight:800;padding:13px 17px;min-height:48px}.btn:hover{background:var(--green2)}.btn.secondary{background:#e8f2eb;color:var(--green)}.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--line)}.full{width:100%;margin-top:14px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}.stat{background:#f1f7f2;border-radius:13px;padding:11px}.stat small{display:block;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.5px}.stat strong{display:block;font-size:22px;margin-top:3px}.progress{height:7px;background:#e6eee7;border-radius:20px;overflow:hidden;margin:13px 0 19px}.progress div{height:100%;width:0;background:var(--gold);transition:width .2s}
+.question{font-size:clamp(20px,4vw,27px);line-height:1.25;margin:8px 0 16px}.option{display:flex;align-items:center;gap:11px;width:100%;padding:13px;text-align:left;border:1px solid var(--line);background:white;color:var(--ink);border-radius:13px;margin-top:9px;min-height:52px}.letter{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#edf4ee;color:var(--green);font-weight:900;flex-shrink:0}.option.correct{background:#e0f5e7;border-color:#20804c}.option.incorrect{background:#fff0f0;border-color:#c84b4b}.option:disabled{cursor:default}
+.feedback{min-height:44px;padding-top:12px;color:var(--muted);font-size:14px;line-height:1.45}.hidden{display:none!important}.result{text-align:center}.result .big{font-size:58px}.result h2{font-size:28px}.scoreline{font-size:35px;font-weight:900;color:var(--green);margin:10px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 4px 0;line-height:1.5}.note{background:#fff7df;border:1px solid #f2dda0;color:#6c5418;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;margin-top:14px}
+@media(max-width:420px){.wrap{padding:12px 10px 25px}.hero{padding:20px}.panel{padding:16px}.tag{font-size:10px}.categories{gap:8px}.cat{padding:11px}.stat strong{font-size:19px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top"><div class="brand"><div class="logo">🌍</div><div>AFRICA<br>CHALLENGE</div></div><span class="tag">GRATUIT • VERSION BÊTA</span></header>
+  <section class="hero"><div class="eyebrow">TON INTELLIGENCE, TON DÉFI !</div><h1>Es-tu un génie<br>africain ?</h1><p>Réponds aux questions, cumule les points et défie tes amis. Prêt à relever le challenge ?</p><div class="hero-bottom"><span class="chip">🧠 Culture générale</span><span class="chip">⚽ Sport</span><span class="chip">🌍 Afrique</span></div></section>
+
+  <section id="home" class="panel">
+    <h2>Choisis ta catégorie</h2><p class="sub">10 questions par partie · 15 secondes par réponse · 100 points par bonne réponse, avec bonus de série.</p>
+    <div class="categories" id="categories">
+      <button class="cat selected" data-cat="Tout"><span>🌍</span><strong>Tout mélangé</strong><small>Un peu de tout</small></button>
+      <button class="cat" data-cat="Côte d’Ivoire"><span>🇨🇮</span><strong>Côte d’Ivoire</strong><small>Pays et culture</small></button>
+      <button class="cat" data-cat="Football"><span>⚽</span><strong>Football & sport</strong><small>Les champions</small></button>
+      <button class="cat" data-cat="Géographie"><span>🗺️</span><strong>Géographie</strong><small>Afrique et monde</small></button>
+      <button class="cat" data-cat="Sciences"><span>🔬</span><strong>Sciences</strong><small>Découvre et apprends</small></button>
+      <button class="cat" data-cat="Culture générale"><span>🧠</span><strong>Culture générale</strong><small>Teste ton savoir</small></button>
+    </div>
+    <button id="start" class="btn full">COMMENCER LE DÉFI ▶</button>
+    <div class="note">Les points sont virtuels et ne peuvent pas être convertis en argent. Cette version n'exige ni compte ni paiement.</div>
+  </section>
+
+  <section id="game" class="panel hidden">
+    <div class="row"><span id="categoryLabel" class="tag">CULTURE GÉNÉRALE</span><strong id="questionCount">1 / 10</strong></div>
+    <div class="stats"><div class="stat"><small>SCORE</small><strong id="score">0</strong></div><div class="stat"><small>TEMPS</small><strong id="time">15 s</strong></div><div class="stat"><small>SÉRIE 🔥</small><strong id="streak">0</strong></div></div>
+    <div class="progress"><div id="progress"></div></div>
+    <h2 id="question" class="question">Question</h2>
+    <div id="options"></div>
+    <div id="feedback" class="feedback" aria-live="polite">Choisis une réponse.</div>
+    <button id="next" class="btn full hidden">QUESTION SUIVANTE →</button>
+  </section>
+
+  <section id="result" class="panel result hidden">
+    <div id="medal" class="big">🏆</div><h2 id="resultTitle">Défi terminé !</h2><div class="scoreline"><span id="finalScore">0</span> points</div>
+    <p id="summary" class="sub"></p><p id="rank"><strong>Niveau : Challenger</strong></p>
+    <label for="shareText" style="display:block;text-align:left;font-weight:800;font-size:14px;margin:16px 0 7px">Ton message pour défier tes amis</label>
+    <textarea id="shareText" readonly rows="3" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;background:#f8faf8;color:var(--ink)"></textarea>
+    <button id="share" class="btn full">PARTAGER SUR WHATSAPP ↗</button>
+    <button id="again" class="btn secondary full">REJOUER 🔥</button>
+    <button id="homeBtn" class="btn ghost full">RETOURNER À L’ACCUEIL</button>
+  </section>
+  <footer class="footer">AFRICA CHALLENGE · Prototype indépendant en version bêta.<br>Les scores sont stockés uniquement pendant cette session. Le classement en ligne et les publicités ne sont pas encore activés.</footer>
+</main>
+<script>
+(() => {
+const bank = [
+{c:"Côte d’Ivoire",q:"Quelle est la capitale politique de la Côte d’Ivoire ?",a:["Abidjan","Yamoussoukro","Bouaké","Daloa"],k:1,e:"Yamoussoukro est la capitale politique et administrative."},
+{c:"Géographie",q:"Quel est le plus grand désert chaud du monde ?",a:["Le Kalahari","Le Sahara","Le Namib","Le désert de Gobi"],k:1,e:"Le Sahara se trouve en Afrique du Nord."},
+{c:"Football",q:"Combien de joueurs une équipe de football aligne-t-elle normalement au coup d’envoi ?",a:["9","10","11","12"],k:2,e:"Une équipe commence normalement avec onze joueurs."},
+{c:"Géographie",q:"Dakar est la capitale de quel pays ?",a:["Mali","Sénégal","Gabon","Togo"],k:1,e:"Dakar est la capitale du Sénégal."},
+{c:"Sciences",q:"Combien de côtés possède un hexagone ?",a:["5","6","7","8"],k:1,e:"Un hexagone possède six côtés."},
+{c:"Côte d’Ivoire",q:"Quelle monnaie est utilisée en Côte d’Ivoire ?",a:["Le naira","Le cedi","Le franc CFA de l’UEMOA","Le dalasi"],k:2,e:"La Côte d’Ivoire utilise le franc CFA de l’UEMOA."},
+{c:"Géographie",q:"Quel océan borde le sud de la Côte d’Ivoire ?",a:["Océan Indien","Océan Atlantique","Océan Arctique","Aucun océan"],k:1,e:"Le golfe de Guinée appartient à l’océan Atlantique."},
+{c:"Culture générale",q:"Combien de jours compte une année bissextile ?",a:["364","365","366","367"],k:2,e:"Une année bissextile compte 366 jours."},
+{c:"Géographie",q:"Dans quel pays se trouve la ville de Kigali ?",a:["Rwanda","Niger","Liberia","Angola"],k:0,e:"Kigali est la capitale du Rwanda."},
+{c:"Sciences",q:"Quelle planète est surnommée la planète rouge ?",a:["Vénus","Mars","Jupiter","Mercure"],k:1,e:"Mars paraît rougeâtre à cause des minéraux riches en fer de sa surface."},
+{c:"Football",q:"Quel pays a remporté la CAN masculine 2023, disputée en 2024 ?",a:["Nigeria","Égypte","Côte d’Ivoire","Maroc"],k:2,e:"La Côte d’Ivoire a remporté la finale contre le Nigeria."},
+{c:"Géographie",q:"Quel est le plus grand continent en superficie ?",a:["Afrique","Europe","Asie","Océanie"],k:2,e:"L’Asie est le continent le plus vaste."},
+{c:"Côte d’Ivoire",q:"Dans quelle ville se trouve la basilique Notre-Dame de la Paix ?",a:["San-Pédro","Yamoussoukro","Man","Grand-Bassam"],k:1,e:"La basilique se trouve à Yamoussoukro."},
+{c:"Sciences",q:"Combien de minutes y a-t-il dans deux heures ?",a:["60","90","120","180"],k:2,e:"Deux heures représentent 120 minutes."},
+{c:"Culture générale",q:"Quel instrument sert à mesurer la température ?",a:["Baromètre","Thermomètre","Chronomètre","Altimètre"],k:1,e:"Un thermomètre mesure la température."},
+{c:"Géographie",q:"Quelle est la capitale du Ghana ?",a:["Accra","Lomé","Conakry","Bamako"],k:0,e:"Accra est la capitale du Ghana."},
+{c:"Sciences",q:"Quel gaz les plantes absorbent-elles pour la photosynthèse ?",a:["Oxygène","Dioxyde de carbone","Hélium","Hydrogène"],k:1,e:"Les plantes utilisent le dioxyde de carbone pendant la photosynthèse."},
+{c:"Géographie",q:"Le mont Kilimandjaro se trouve dans quel pays ?",a:["Tanzanie","Algérie","Sénégal","Cameroun"],k:0,e:"Le Kilimandjaro se trouve en Tanzanie."},
+{c:"Culture générale",q:"Combien de lettres compte l’alphabet français usuel ?",a:["24","25","26","28"],k:2,e:"L’alphabet utilisé en français compte 26 lettres."},
+{c:"Sciences",q:"Quel organe pompe le sang dans le corps humain ?",a:["Le foie","Le cœur","Le poumon","Le rein"],k:1,e:"Le cœur propulse le sang dans la circulation."},
+{c:"Côte d’Ivoire",q:"Quel est le surnom de l’équipe nationale masculine de football ivoirienne ?",a:["Les Lions de la Teranga","Les Éléphants","Les Aigles","Les Léopards"],k:1,e:"Les Éléphants sont le surnom de la sélection ivoirienne."},
+{c:"Football",q:"Combien de minutes dure normalement un match de football, hors temps additionnel ?",a:["60","80","90","100"],k:2,e:"Un match standard dure deux périodes de 45 minutes."},
+{c:"Géographie",q:"Quel fleuve traverse notamment l’Égypte ?",a:["Le Niger","Le Nil","Le Congo","Le Zambèze"],k:1,e:"Le Nil traverse l’Égypte et se jette dans la Méditerranée."},
+{c:"Culture générale",q:"Combien font 9 × 7 ?",a:["56","63","72","49"],k:1,e:"9 multiplié par 7 donne 63."},
+{c:"Sciences",q:"À pression atmosphérique normale, à quelle température l’eau bout-elle ?",a:["50 °C","80 °C","100 °C","120 °C"],k:2,e:"L’eau bout à 100 °C au niveau de la mer."},
+{c:"Géographie",q:"Quelle est la capitale du Bénin selon la constitution ?",a:["Cotonou","Porto-Novo","Parakou","Abomey"],k:1,e:"Porto-Novo est la capitale officielle ; Cotonou accueille le siège du gouvernement."},
+{c:"Culture générale",q:"Quelle langue est principalement parlée au Brésil ?",a:["Espagnol","Portugais","Français","Anglais"],k:1,e:"Le portugais est la langue officielle du Brésil."},
+{c:"Football",q:"Quel pays a accueilli la Coupe du monde masculine de football 2022 ?",a:["Qatar","Russie","Brésil","Afrique du Sud"],k:0,e:"La compétition s’est déroulée au Qatar."},
+{c:"Sciences",q:"Quel est le symbole chimique de l’eau ?",a:["CO₂","O₂","H₂O","NaCl"],k:2,e:"Une molécule d’eau contient deux atomes d’hydrogène et un d’oxygène."},
+{c:"Côte d’Ivoire",q:"Quelle ville est souvent appelée la capitale économique de la Côte d’Ivoire ?",a:["Korhogo","Abidjan","Yamoussoukro","Odienné"],k:1,e:"Abidjan est le principal centre économique du pays."}
+];
+const $=id=>document.getElementById(id);
+let selected="Tout",questions=[],idx=0,score=0,streak=0,correct=0,left=15,timer=null,answered=false;
+function show(id){["home","game","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+document.querySelectorAll(".cat").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.cat;document.querySelectorAll(".cat").forEach(x=>x.classList.toggle("selected",x===b))}));
+function stop(){if(timer){clearInterval(timer);timer=null}}
+function start(){stop();let pool=selected==="Tout"?bank:bank.filter(q=>q.c===selected);questions=pool.slice().sort(()=>Math.random()-.5).slice(0,Math.min(10,pool.length));idx=score=streak=correct=0;show("game");render()}
+function render(){stop();answered=false;left=15;const q=questions[idx];$("categoryLabel").textContent=q.c.toUpperCase();$("questionCount").textContent=(idx+1)+" / "+questions.length;$("score").textContent=score;$("streak").textContent=streak;$("time").textContent=left+" s";$("progress").style.width=(idx/questions.length*100)+"%";$("question").textContent=q.q;$("feedback").textContent="Choisis une réponse avant la fin du temps.";$("next").classList.add("hidden");const box=$("options");box.replaceChildren();q.a.forEach((answer,j)=>{const b=document.createElement("button");b.className="option";b.innerHTML='<span class="letter">'+String.fromCharCode(65+j)+'</span><span></span>';b.lastElementChild.textContent=answer;b.addEventListener("click",()=>pick(j));box.appendChild(b)});timer=setInterval(()=>{left--;$("time").textContent=left+" s";if(left<=0){stop();pick(-1)}},1000)}
+function pick(j){if(answered)return;answered=true;stop();const q=questions[idx];$("options").querySelectorAll("button").forEach((b,n)=>{b.disabled=true;if(n===q.k)b.classList.add("correct");if(n===j&&j!==q.k)b.classList.add("incorrect")});if(j===q.k){streak++;correct++;score+=100+Math.min((streak-1)*10,50);$("feedback").textContent="✅ Bonne réponse ! "+q.e}else{streak=0;$("feedback").textContent=(j<0?"⏱️ Temps écoulé. ":"❌ Pas tout à fait. ")+q.e}$("score").textContent=score;$("streak").textContent=streak;$("progress").style.width=((idx+1)/questions.length*100)+"%";$("next").textContent=idx===questions.length-1?"VOIR MON RÉSULTAT 🏆":"QUESTION SUIVANTE →";$("next").classList.remove("hidden")}
+function finish(){stop();show("result");$("finalScore").textContent=score;$("summary").textContent="Tu as trouvé "+correct+" bonne(s) réponse(s) sur "+questions.length+".";let title,medal,rank;if(correct>=9){title="Incroyable, champion !";medal="🥇";rank="Génie africain"}else if(correct>=6){title="Bien joué, challenger !";medal="🏆";rank="Challenger"}else{title="Continue à t’entraîner !";medal="💪";rank="Apprenti"}$("resultTitle").textContent=title;$("medal").textContent=medal;$("rank").textContent="Niveau : "+rank;const msg="🌍 AFRICA CHALLENGE\\nJ’ai marqué "+score+" points et obtenu "+correct+"/"+questions.length+" bonnes réponses ! 🔥\\nPeux-tu battre mon score ?";$("shareText").value=msg}
+$("start").addEventListener("click",start);$("next").addEventListener("click",()=>{if(idx<questions.length-1){idx++;render()}else finish()});$("again").addEventListener("click",start);$("homeBtn").addEventListener("click",()=>{stop();show("home")});$("share").addEventListener("click",()=>{const url="https://wa.me/?text="+encodeURIComponent($("shareText").value);window.open(url,"_blank","noopener")});
+})();
+</script>
+</body>
+</html>
